@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HNGx Project</title>
+</head>
+<body>
+    <h1 id="welcome-msg">WELCOME</h1>
+  <div class="container">
+    <div class="section-one">
+    <p data-testid="slackUserName">Fortune Sunday</p>
+    <p  data-testid="currentDayOfTheWeek" id="day"></p>
+    <p data-testid="currentUTCTime" id="time"></p>
+    <p data-testid="myTrack">Frontend</p>
+    <a data-testid=“githubURL” href="">Github URL</a>
+    </div>
+    
+    <div class="img-div">
+      <div class="empty-div"></div>
+      <img data-testid="slackDisplayImage" src="Image/IMG_20230328_121128_304.jpg" alt="Fortune Sunday">
+      <div class="empty-div"></div>
+    </div>
+  </div>
+  <script>
+    function displayDay() {
+    let currentWeekday = new Date();
+    
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let dayOfWeek = currentWeekday.getDay();
+    let dayString = days[dayOfWeek];
+
+      return dayString;
+      
+    }
+
+    document.getElementById("day").innerHTML = displayDay();
+    
+    let currentDate = new Date();
+    let currentTimeInMilliseconds = currentDate.toUTCString();
+
+    document.getElementById("time").innerHTML = currentTimeInMilliseconds;
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      border: 0;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #welcome-msg {
+      background-color: aqua;
+      text-align: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .container {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    p {
+      padding: 5px;
+    }
+
+    a {
+      padding: 5px;
+      text-decoration: none;
+    }
+
+    .img-div {
+      width: 170px;
+    }
+
+    img {
+      width: 100%;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  </style>
+</body>
+</html>

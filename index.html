@@ -38,7 +38,7 @@
     document.getElementById("day").innerHTML = displayDay();
     
     let currentDate = new Date();
-    let currentTimeInMilliseconds = currentDate.toUTCString();
+    let currentTimeInMilliseconds = currentDate.getUTCMilliseconds();
 
     document.getElementById("time").innerHTML = currentTimeInMilliseconds;
   </script>
